@@ -1,29 +1,22 @@
-# GLBSMamba
+# heavy-for-HSI-light-for-LiDAR
 
 ***MMRS*** is a python tool to perform deep learning experiments on multi-modal remote sensing data.
 
 This repository is developed on the top of [MMRS](https://github.com/likyoo/Multimodal-Remote-Sensing-Toolkit) . 
 
+## Intro
+本仓库为论文 《非对称结构的高光谱（HSI）与激光雷达（LiDAR）图像分类模型》 的官方开源实现。
+该论文已发表于 《浙江大学学报（工学版）》，欢迎同行交流与审阅。
+如果您在运行代码的过程中遇到任何问题，欢迎随时与我们联系。
 
 ## Usage
 
-Start a Visdom server: `python -m visdom.server` and go to [`http://localhost:8097`](http://localhost:8097/) to see the visualizations.
-
-Then, run the script `main.py`.
-
-The most useful arguments are:
-
-- `--model` to specify the model (e.g. 'Multimodality_Mamba', 'S2ENet'),
-- `--dataset` to specify which dataset to use (e.g. 'Houston2013', 'Muufl'),
-- the `--cuda` switch to run the neural nets on GPU. The tool fallbacks on CPU if this switch is not specified.
-
-There are more parameters that can be used to control more finely the behaviour of the tool. See `python main.py -h` for more information.
-
-Examples:
-
-```
-!python main.py --model S2ENet --flip_augmentation --patch_size 7 --epoch 128 --lr 0.001 --batch_size 64 --seed 0 --dataset Houston2013 --folder '../' --train_set '../Houston2013/TRLabel.mat' --test_set '../Houston2013/TSLabel.mat' --cuda 0
-```
-
-For more features please refer to [DeepHyperX](https://github.com/nshaud/DeepHyperX).
+1. Start a Visdom server:
+    python -m visdom.server
+Then open your browser and navigate to
+    http://localhost:8097
+ to monitor training visualizations.
+2. Run the main script:
+    python main.py
+For additional features and extended functionalities, please refer to [DeepHyperX](https://github.com/nshaud/DeepHyperX).
 
